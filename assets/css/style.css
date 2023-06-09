@@ -140,6 +140,22 @@ input::placeholder{
     background-color: var(--color-dark-green);
     color: var(--color-white);
 }
+.btn-back{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+}
+.btn-back:hover{
+    background-color: var(--color-royal-blue);
+    color: var(--color-white);
+}
+.btn-settle{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+}
+.btn-settle:hover{
+    background-color: var(--color-dark-gray);
+    color: var(--color-white);
+}
 
 .itemlist-table {
     width: 100%;
