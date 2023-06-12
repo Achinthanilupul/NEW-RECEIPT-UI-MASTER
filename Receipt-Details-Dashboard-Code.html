@@ -816,8 +816,9 @@
                                                     id="button-addon2">
                                                     <i class='bi bi-123'></i>
                                                 </button>
-                                                <input type="number" class="form-control" id="receiptAmount5"
-                                                    aria-describedby="button-addon2" placeholder="Card Number">
+                                                <input type="text" class="form-control" id="numberInput" oninput="formatNumber()"
+                                                    aria-describedby="button-addon2" placeholder="Receipt Amount">
+                                                 
                                             </div>
                                         </div>
                                         
@@ -937,5 +938,25 @@
         }
     }
 </script>
+
+<script>
+    function formatNumber() {
+      // Get the input element and its value
+      var input = document.getElementById("numberInput");
+      var value = input.value;
+
+      // Remove any existing thousand separators
+      value = value.replace(/,/g, '');
+
+      // Remove any non-numeric characters
+      value = value.replace(/[^0-9]/g, '');
+
+      // Format the number with thousand separators
+      var formattedValue = Number(value).toLocaleString();
+
+      // Update the input value with the formatted number
+      input.value = formattedValue;
+    }
+  </script>
 </body>
 </html>
