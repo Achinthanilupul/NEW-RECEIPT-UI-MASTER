@@ -717,7 +717,7 @@
                                                     id="button-addon2">
                                                     <i class="bi bi-cash-coin"></i>
                                                 </button>
-                                                <select id="ddlModels" type="text" class="form-control" onchange = "disform(this)"
+                                                <select id="ddlModels" type="text" class="form-control" onchange = "disform1(this)" onchange = "disform2(this)" onchange = "disform3(this)" onchange = "disform4(this)"
                                                     aria-describedby="button-addon2">
                                                         <option value="0">Please Select A Payment Type</option>
                                                         <option value="1">Cash</option>
@@ -753,6 +753,166 @@
                                     
                                 </div>
                             </div>
+                            
+                            <!--CASH DETAILS-->
+                            <div id="cardsection">
+                                <div class="card box-shadow-1">
+                                    <div class="card-header" >
+                                        <h4 class="card-header-title color-o">
+                                            <i class='bx bx-map-alt bx-xs card-header-title-icon'></i>
+                                            CASH DETAILS
+                                        </h4>
+                                    </div>
+                                <div id="container1"><form onsubmit="return false;">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-4 col-sm-12 col-xs-12">
+                                                <label class="card-body-title-header">Cash Amount</label>
+                                                <div class="input-group mb-3">
+                                                    <button class="bg-gr color-dg input-icon-button" disabled type="button"
+                                                        id="button-addon2">
+                                                        <i class='bi bi-123'></i>
+                                                    </button>
+                                                    <input type="text" class="form-control" id="numberInput" oninput="formatNumber()"
+                                                        aria-describedby="button-addon2" placeholder="Cash Amount">
+                                                     
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-12 col-xs-12">
+                                                <label class="card-body-title-header"> Receipt Date</label>
+                                                <div class="input-group mb-3">
+                                                    <button class="bg-gr color-dg input-icon-button" disabled type="button"
+                                                        id="button-addon2">
+                                                        <i class="bi bi-calendar-date"></i>
+                                                    </button>
+                                                    <input type="date" class="form-control" id="to-date"
+                                                        aria-describedby="button-addon2"
+                                                        placeholder="Receipt Date">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                        </form></div>
+                                    </div>
+                                </div>
+
+                            <!--CHEQUE DETAILS-->
+                            <div id="cardsection">
+                                <div class="card box-shadow-1">
+                                    <div class="card-header" >
+                                        <h4 class="card-header-title color-o">
+                                            <i class='bx bx-map-alt bx-xs card-header-title-icon'></i>
+                                            CHEQUE DETAILS
+                                        </h4>
+                                    </div>
+                                <div id="container2"><form onsubmit="return false;">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-4 col-sm-12 col-xs-12">
+                                                <label class="card-body-title-header">Cheque Number</label>
+                                                <div class="input-group mb-3">
+                                                    <button class="bg-gr color-dg input-icon-button" disabled type="button"
+                                                        id="buttonAddon1">
+                                                        <i class="bi bi-bank"></i>
+                                                    </button>
+                                                    <input type="text" class="form-control" id="buttonAddon2"
+                                                        aria-describedby="button-addon2" placeholder="Cheque Number">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-12 col-xs-12">
+                                                <label class="card-body-title-header"> Receipt Date</label>
+                                                <div class="input-group mb-3">
+                                                    <button class="bg-gr color-dg input-icon-button" disabled type="button"
+                                                        id="button-addon2">
+                                                        <i class="bi bi-calendar-date"></i>
+                                                    </button>
+                                                    <input type="date" class="form-control" id="to-date"
+                                                        aria-describedby="button-addon2"
+                                                        placeholder="Receipt Date">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-12 col-xs-12">
+                                                <label class="card-body-title-header">Cheque Issuing Bank</label>
+                                                <div class="input-group mb-3">
+                                                    <button class="bg-gr color-dg input-icon-button" disabled type="button"
+                                                        id="buttonAddon1">
+                                                        <i class="bi bi-bank"></i>
+                                                    </button>
+                                                    <input type="text" class="form-control" id="buttonAddon2"
+                                                        aria-describedby="button-addon2" placeholder="Cheque Issuing Bank">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!--BELOW THE ROW-->
+                                        <div class="col-md-4 col-sm-12 col-xs-12">
+                                            <label class="card-body-title-header">Cheque Amount</label>
+                                            <div class="input-group mb-3">
+                                                <button class="bg-gr color-dg input-icon-button" disabled type="button"
+                                                    id="button-addon2">
+                                                    <i class='bi bi-123'></i>
+                                                </button>
+                                                <input type="text" class="form-control" id="numberInput" oninput="formatNumber()"
+                                                    aria-describedby="button-addon2" placeholder="Cheque Amount ">
+                                                 
+                                            </div>
+                                        </div>
+                                        </div>
+                                        </form></div>
+                                    </div>
+                                </div>
+
+                            <!--BANK TRANSFER DETAILS-->
+                            <div id="cardsection">
+                                <div class="card box-shadow-1">
+                                    <div class="card-header" >
+                                        <h4 class="card-header-title color-o">
+                                            <i class='bx bx-map-alt bx-xs card-header-title-icon'></i>
+                                            BANK TRANSFER DETAILS
+                                        </h4>
+                                    </div>
+                                <div id="container"><form onsubmit="return false;">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-4 col-sm-12 col-xs-12">
+                                                <label class="card-body-title-header">Transfer Bank</label>
+                                                <div class="input-group mb-3">
+                                                    <button class="bg-gr color-dg input-icon-button" disabled type="button"
+                                                        id="buttonAddon1">
+                                                        <i class="bi bi-bank"></i>
+                                                    </button>
+                                                    <input type="text" class="form-control" id="buttonAddon2"
+                                                        aria-describedby="button-addon2" placeholder="Transfer Bank">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-12 col-xs-12">
+                                                <label class="card-body-title-header"> Receipt Date</label>
+                                                <div class="input-group mb-3">
+                                                    <button class="bg-gr color-dg input-icon-button" disabled type="button"
+                                                        id="button-addon2">
+                                                        <i class="bi bi-calendar-date"></i>
+                                                    </button>
+                                                    <input type="date" class="form-control" id="to-date"
+                                                        aria-describedby="button-addon2"
+                                                        placeholder="Receipt Date">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-12 col-xs-12">
+                                                <label class="card-body-title-header">Bank Transfer Amount</label>
+                                                <div class="input-group mb-3">
+                                                    <button class="bg-gr color-dg input-icon-button" disabled type="button"
+                                                        id="button-addon2">
+                                                        <i class='bi bi-123'></i>
+                                                    </button>
+                                                    <input type="text" class="form-control" id="numberInput" oninput="formatNumber()"
+                                                        aria-describedby="button-addon2" placeholder="Bank Transfer Amount ">
+                                                     
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                        </form></div>
+                                    </div>
+                                </div>
 
                             <!-- CARD DETAILS -->
                             <div id="cardsection">
@@ -763,7 +923,7 @@
                                         CARD DETAILS
                                     </h4>
                                 </div>
-                                <div id="container"><form onsubmit="return false;">
+                            <div id="container"><form onsubmit="return false;">
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-md-4 col-sm-12 col-xs-12">
@@ -802,14 +962,12 @@
                                     </div>
                                     </div>
                                     </form></div>
-                            <div class="row">
-                               </div>
                                 </div>
                             </div>
-                            <div class="card box-shadow-1">
-                              
 
-                                <!-- REMARKS-->
+                             <!-- REMARKS-->
+
+                            <div class="card box-shadow-1">
                                 <div class="card-body">
                                     <div class="row">
 
@@ -950,28 +1108,58 @@
     function disform(selectElement) {
         var selectedValue = selectElement.value;
 
-        //var section1 = document.getElementById("cardsection");
-        var all = document.querySelectorAll("#container input");
+        var all1 = document.querySelectorAll("#container1 input");
+        var all2 = document.querySelectorAll("#container2 input");
+        var all3 = document.querySelectorAll("#container3 input");
+        var all4 = document.querySelectorAll("#container4 input");
 
+        // INITIAL OPTION SELECTION
         if (selectedValue === "0") {
-            for (let el of all) { el.disabled = true; }
-            
-        } else if (selectedValue === "1") {
-            for (let el of all) { el.disabled = true; }
-
-        } else if (selectedValue === "2") {
-            for (let el of all) { el.disabled = true; }
-
-        } else if (selectedValue === "3") {
-            for (let el of all) { el.disabled = true; }
-
-        } else if (selectedValue === "4") {
-            for (let el of all) { el.disabled = false; }
-           
-        } else {
-            for (let el of all) { el.disabled = true; }
+            for (let el of all1) { el.disabled = true;}
+                for (let el of all2) { el.disabled = true; }
+                    for (let el of all3) { el.disabled = true; }
+                        for (let el of all4) { el.disabled = true; }
         }
+
+        // CASH OPTION SELECTION
+        if (selectedValue === "1") {
+            for (let el of all1) { el.disabled = false;}
+                for (let el of all2) { el.disabled = true; }
+                    for (let el of all3) { el.disabled = true; }
+                        for (let el of all4) { el.disabled = true; }
+        }
+
+        // CHEQUE OPTION SELECTION
+        if (selectedValue === "2") {
+            for (let el of all1) { el.disabled = true;}
+                for (let el of all2) { el.disabled = false; }
+                    for (let el of all3) { el.disabled = true; }
+                        for (let el of all4) { el.disabled = true; }
+        }
+
+        // // CHEQUE OPTION SELECTION
+        // var all = document.querySelectorAll("#container2 input");
+
+        // if (selectedValue === "1") {
+        //     for (let el of all) { el.disabled = true; }
+            
+        // } else if (selectedValue === "1") {
+        //     for (let el of all) { el.disabled = true; }
+
+        // } else if (selectedValue === "2") {
+        //     for (let el of all) { el.disabled = false; }
+
+        // } else if (selectedValue === "3") {
+        //     for (let el of all) { el.disabled = true; }
+
+        // } else if (selectedValue === "4") {
+        //     for (let el of all) { el.disabled = true; }
+
+        // } else {
+        //     for (let el of all) { el.disabled = true; }
+        // }
     }
+
 </script>
 
 
