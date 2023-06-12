@@ -753,9 +753,9 @@
                             </div>
 
                             <!-- CARD DETAILS -->
-
+                            <div id="cardsection">
                             <div class="card box-shadow-1">
-                                <div class="card-header">
+                                <div class="card-header" >
                                     <h4 class="card-header-title color-o">
                                         <i class='bx bx-map-alt bx-xs card-header-title-icon'></i>
                                         CARD DETAILS
@@ -767,7 +767,7 @@
                                             <label class="card-body-title-header">Card Issuing Bank</label>
                                             <div class="input-group mb-3">
                                                 <button class="bg-gr color-dg input-icon-button" disabled type="button"
-                                                    id="button-addon2">
+                                                    id="buttonAddon1">
                                                     <i class="bi bi-bank"></i>
                                                 </button>
                                                 <input type="text" class="form-control" id="buttonAddon2"
@@ -778,7 +778,7 @@
                                             <label class="card-body-title-header">Card Number</label>
                                             <div class="input-group mb-3">
                                                 <button class="bg-gr color-dg input-icon-button" disabled type="button"
-                                                    id="button-addon2">
+                                                    id="buttonAddon2">
                                                     <i class='bi bi-123'></i>
                                                 </button>
                                                 <input type="number" class="form-control" id="buttonAddon2"
@@ -789,13 +789,14 @@
                                             <label class="card-body-title-header">Card Holder Name</label>
                                             <div class="input-group mb-3">
                                                 <button class="bg-gr color-dg input-icon-button" disabled type="button"
-                                                    id="button-addon2">
+                                                    id="buttonAddon3">
                                                     <i class='bx bxs-user'></i>
                                                 </button>
                                                 <input type="text" class="form-control" id="buttonAddon2"
                                                     aria-describedby="button-addon2" placeholder="Card Holder Name">
                                             </div>
                                         </div>
+                                    </div>
                                     </div>
                             <div class="row">
                                </div>
@@ -815,7 +816,7 @@
                                                     id="button-addon2">
                                                     <i class='bi bi-123'></i>
                                                 </button>
-                                                <input type="number" class="form-control" id="buttonAddon2"
+                                                <input type="number" class="form-control" id="receiptAmount5"
                                                     aria-describedby="button-addon2" placeholder="Card Number">
                                             </div>
                                         </div>
@@ -916,17 +917,25 @@
     </script>
 
 
-<script type="text/javascript">
-    function EnableDisableTextBox(ddlModels) {
-        var selectedValue = ddlModels.options[ddlModels.selectedIndex].value;
-        var buttonAddon2 = document.getElementById("buttonAddon2");
-        buttonAddon2.disabled = selectedValue == 2 ? false : true;
-        if (!buttonAddon2.disabled) {
-          buttonAddon2.focus();
+ 
+  <script>
+    function EnableDisableTextBox(selectElement) {
+        var selectedValue = selectElement.value;
+
+        var section1 = document.getElementById("cardsection");
+     
+
+        if (selectedValue === "2") {
+            section1.style.display = "block";
+            
+        } else if (selectedValue === "3") {
+            section1.style.display = "none";
+           
+        } else {
+            section1.style.display = "none";
+            section2.style.display = "none";
         }
     }
-  </script>
-  
-
+</script>
 </body>
 </html>
