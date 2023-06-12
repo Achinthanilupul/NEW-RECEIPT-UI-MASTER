@@ -717,7 +717,7 @@
                                                     id="button-addon2">
                                                     <i class="bi bi-cash-coin"></i>
                                                 </button>
-                                                <select id="ddlModels" type="text" class="form-control" onchange = "EnableDisableTextBox(this)"
+                                                <select id="ddlModels" type="text" class="form-control" onchange = "disform(this)"
                                                     aria-describedby="button-addon2">
                                                         <option value="0">Please Select A Payment Type</option>
                                                         <option value="1">Cash</option>
@@ -761,6 +761,7 @@
                                         CARD DETAILS
                                     </h4>
                                 </div>
+                                <div id="container"><form onsubmit="return false;">
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-md-4 col-sm-12 col-xs-12">
@@ -798,6 +799,7 @@
                                         </div>
                                     </div>
                                     </div>
+                                    </form></div>
                             <div class="row">
                                </div>
                                 </div>
@@ -917,27 +919,7 @@
         });
     </script>
 
-
- 
-  <script>
-    function EnableDisableTextBox(selectElement) {
-        var selectedValue = selectElement.value;
-
-        var section1 = document.getElementById("cardsection");
-     
-
-        if (selectedValue === "2") {
-            section1.style.display = "block";
-            
-        } else if (selectedValue === "3") {
-            section1.style.display = "none";
-           
-        } else {
-            section1.style.display = "none";
-            section2.style.display = "none";
-        }
-    }
-</script>
+<!--THOUSAND SEPARATOR-->
 
 <script>
     function formatNumber() {
@@ -958,5 +940,55 @@
       input.value = formattedValue;
     }
   </script>
+
+
+<!-- SECTION SEPARATOR -->
+ 
+  <script>
+    function disform(selectElement) {
+        var selectedValue = selectElement.value;
+
+        //var section1 = document.getElementById("cardsection");
+        var all = document.querySelectorAll("#container input");
+
+        if (selectedValue === "2") {
+            for (let el of all) { el.disabled = false; }
+            
+        } else if (selectedValue === "3") {
+            for (let el of all) { el.disabled = true; }
+           
+        } else {
+            for (let el of all) { el.disabled = true; }
+        }
+    }
+</script>
+
+
+
+
+<!--<script>
+
+    function disform () {
+
+      // (B1) GET ALL FORM ELEMENTS
+
+      var all = document.querySelectorAll("#container select, #container input, #container textarea, #container button");
+
+ 
+
+      // (B2) DISABLE ALL
+
+      for (let el of all) { el.disabled = true; }
+
+ 
+
+      // (B3) TO ENABLE
+
+      // for (let el of allform) { el.disabled = false; }
+
+    }
+
+    </script>-->
+
 </body>
 </html>
