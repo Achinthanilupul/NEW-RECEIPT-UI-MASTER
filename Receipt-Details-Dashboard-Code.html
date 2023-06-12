@@ -721,7 +721,9 @@
                                                     aria-describedby="button-addon2">
                                                         <option value="0">Please Select A Payment Type</option>
                                                         <option value="1">Cash</option>
-                                                        <option value="2">Card</option> 
+                                                        <option value="2">Cheque</option>
+                                                        <option value="3">Bank Transfer</option>
+                                                        <option value="4">Card</option> 
                                                     </select>
                                             </div>
                                         </div>
@@ -951,11 +953,20 @@
         //var section1 = document.getElementById("cardsection");
         var all = document.querySelectorAll("#container input");
 
-        if (selectedValue === "2") {
-            for (let el of all) { el.disabled = false; }
+        if (selectedValue === "0") {
+            for (let el of all) { el.disabled = true; }
             
+        } else if (selectedValue === "1") {
+            for (let el of all) { el.disabled = true; }
+
+        } else if (selectedValue === "2") {
+            for (let el of all) { el.disabled = true; }
+
         } else if (selectedValue === "3") {
             for (let el of all) { el.disabled = true; }
+
+        } else if (selectedValue === "4") {
+            for (let el of all) { el.disabled = false; }
            
         } else {
             for (let el of all) { el.disabled = true; }
