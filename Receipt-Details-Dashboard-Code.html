@@ -1102,92 +1102,9 @@
   </script>
 
 
-<!-- SECTION SEPARATOR -->
- 
-  <script>
-    function disform(selectElement) {
-        var selectedValue = selectElement.value;
-
-        var all1 = document.querySelectorAll("#container1 input");
-        var all2 = document.querySelectorAll("#container2 input");
-        var all3 = document.querySelectorAll("#container3 input");
-        var all4 = document.querySelectorAll("#container4 input");
-
-        // INITIAL OPTION SELECTION
-        if (selectedValue === "0") {
-            for (let el of all1) { el.disabled = true;}
-                for (let el of all2) { el.disabled = true; }
-                    for (let el of all3) { el.disabled = true; }
-                        for (let el of all4) { el.disabled = true; }
-        }
-
-        // CASH OPTION SELECTION
-        if (selectedValue === "1") {
-            for (let el of all1) { el.disabled = false;}
-                for (let el of all2) { el.disabled = true; }
-                    for (let el of all3) { el.disabled = true; }
-                        for (let el of all4) { el.disabled = true; }
-        }
-
-        // CHEQUE OPTION SELECTION
-        if (selectedValue === "2") {
-            for (let el of all1) { el.disabled = true;}
-                for (let el of all2) { el.disabled = false; }
-                    for (let el of all3) { el.disabled = true; }
-                        for (let el of all4) { el.disabled = true; }
-        }
-
-        // // CHEQUE OPTION SELECTION
-        // var all = document.querySelectorAll("#container2 input");
-
-        // if (selectedValue === "1") {
-        //     for (let el of all) { el.disabled = true; }
-            
-        // } else if (selectedValue === "1") {
-        //     for (let el of all) { el.disabled = true; }
-
-        // } else if (selectedValue === "2") {
-        //     for (let el of all) { el.disabled = false; }
-
-        // } else if (selectedValue === "3") {
-        //     for (let el of all) { el.disabled = true; }
-
-        // } else if (selectedValue === "4") {
-        //     for (let el of all) { el.disabled = true; }
-
-        // } else {
-        //     for (let el of all) { el.disabled = true; }
-        // }
-    }
-
-</script>
-
-
-
-
-<!--<script>
-
-    function disform () {
-
-      // (B1) GET ALL FORM ELEMENTS
-
-      var all = document.querySelectorAll("#container select, #container input, #container textarea, #container button");
-
+<!-- NO EDITING ABOVE THIS LINE. THOUSAND SEPARATOR -->
  
 
-      // (B2) DISABLE ALL
-
-      for (let el of all) { el.disabled = true; }
-
- 
-
-      // (B3) TO ENABLE
-
-      // for (let el of allform) { el.disabled = false; }
-
-    }
-
-    </script>-->
 
 </body>
 </html>

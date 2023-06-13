@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Enable/Disable Input Fields in Multiple Containers</title>
+</head>
+<body>
+  <h2>Enable/Disable Input Fields in Multiple Containers Example</h2>
+  
+  <label for="dropdown">Select an option:</label>
+  <select id="dropdown" placeholder="Please Select An Option" onchange="handleDropdownChange()">
+    <option value="option1">Cash Option</option>
+    <option value="option2">Cheque Option</option>
+    <option value="option3">Bank Transfer Option</option>
+    <option value="option4">Card Option</option>
+  </select>
+  
+  <br><br>
+  
+  <div id="container1">
+    <h3>CASH DETAILS</h3>
+    <label for="input1">Input 1:</label>
+    <input type="text" id="input1" disabled>
+    <input type="text" id="input1" disabled>
+  </div>
+  
+  <br>
+  
+  <div id="container2">
+    <h3>CHEQUE DETAILS</h3>
+    <label for="input2">Input 2:</label>
+    <input type="text" id="input2" disabled>
+    <input type="text" id="input2" disabled>
+    <input type="text" id="input2" disabled>
+    <input type="text" id="input2" disabled>
+  </div>
+  
+  <br>
+  
+  <div id="container3">
+    <h3>BANK TRANSFER DETAILS</h3>
+    <label for="input3">Input 3:</label>
+    <input type="text" id="input3" disabled>
+    <input type="text" id="input3" disabled>
+    <input type="text" id="input3" disabled>
+  </div>
+
+  <br>
+  
+  <div id="container4">
+    <h3>CARD DETAILS</h3>
+    <label for="input4">Input 4:</label>
+    <input type="text" id="input4" disabled>
+    <input type="text" id="input4" disabled>
+    <input type="text" id="input4" disabled>
+  </div>
+
+  <script>
+    function handleDropdownChange() {
+      var dropdown = document.getElementById("dropdown");
+      var selectedOption = dropdown.value;
+      
+      var container1 = document.getElementById("container1");
+      var container2 = document.getElementById("container2");
+      var container3 = document.getElementById("container3");
+      var container4 = document.getElementById("container4");
+      
+      // Disable all input fields in all containers initially
+      disableAllInputs(container1);
+      disableAllInputs(container2);
+      disableAllInputs(container3);
+      disableAllInputs(container4);
+      
+      // Enable input fields based on the selected option and container
+      if (selectedOption === "option1") {
+        enableInputs(container1);
+      } else if (selectedOption === "option2") {
+        enableInputs(container2);
+      } else if (selectedOption === "option3") {
+        enableInputs(container3);
+      } else if (selectedOption === "option4") {
+        enableInputs(container4);
+      } 
+    }
+    
+    function disableAllInputs(container) {
+      var inputs = container.getElementsByTagName("input");
+      
+      for (var i = 0; i < inputs.length; i++) {
+        inputs[i].disabled = true;
+      }
+    }
+    
+    function enableInputs(container) {
+      var inputs = container.getElementsByTagName("input");
+      
+      for (var i = 0; i < inputs.length; i++) {
+        inputs[i].disabled = false;
+      }
+    }
+  </script>
+</body>
+</html>
