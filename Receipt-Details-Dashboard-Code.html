@@ -773,7 +773,7 @@
                                                         id="button-addon2">
                                                         <i class='bi bi-123'></i>
                                                     </button>
-                                                    <input type="text" id="numberInput" class="form-control" oninput="formatNumber()"
+                                                    <input type="text" id="input1" class="form-control" onkeyup="formatNumber(this)" disabled
                                                         aria-describedby="button-addon2" placeholder="Cash Amount">
                                                      
                                                 </div>
@@ -814,8 +814,8 @@
                                                         id="buttonAddon1">
                                                         <i class="bi bi-bank"></i>
                                                     </button>
-                                                    <input type="text" id="numberInput" class="form-control" disabled oninput="formatNumber()"
-                                                    aria-describedby="button-addon2" placeholder="Cheque Number">
+                                                    <input type="text" id="numberInput" class="form-control"
+                                                        aria-describedby="button-addon2" placeholder="Cheque Amount" disabled>
                                                 </div>
                                             </div>
                                             <div class="col-md-4 col-sm-12 col-xs-12">
@@ -850,7 +850,7 @@
                                                     id="button-addon2">
                                                     <i class='bi bi-123'></i>
                                                 </button>
-                                                <input type="text" id="numberInput" class="form-control" oninput="formatNumber()"
+                                                <input type="text" id="input2" class="form-control" onkeyup="formatNumber(this)" disabled
                                                     aria-describedby="button-addon2" placeholder="Cheque Amount">
                                                  
                                             </div>
@@ -900,7 +900,7 @@
                                                         id="button-addon2">
                                                         <i class='bi bi-123'></i>
                                                     </button>
-                                                    <input type="text" id="numberInput" class="form-control" oninput="formatNumber()"
+                                                    <input type="text" id="input3" class="form-control" onkeyup="formatNumber(this)" disabled
                                                     aria-describedby="button-addon2" placeholder="Bank Transfer Amount">
                                                      
                                                 </div>
@@ -963,8 +963,8 @@
                                                     id="button-addon2">
                                                     <i class='bi bi-123'></i>
                                                 </button>
-                                                <input type="text" id="numberInput" class="form-control" oninput="formatNumber()"
-                                                aria-describedby="button-addon2" placeholder="Card Payment Amount">
+                                                <input type="text" id="input4" class="form-control" onkeyup="formatNumber(this)" disabled
+                                                    aria-describedby="button-addon2" placeholder="Card Payment Amount">
                                                  
                                             </div>
                                         </div>
@@ -986,8 +986,8 @@
                                                     id="button-addon2">
                                                     <i class='bi bi-123'></i>
                                                 </button>
-                                                <input type="text" class="form-control" id="numberInput" oninput="formatNumber()"
-                                                    aria-describedby="button-addon2" placeholder="Receipt Amount">
+                                                <input type="text" id="input1" class="form-control" onkeyup="formatNumber(this)"
+                                                aria-describedby="button-addon2" placeholder="Receipt Amount">
                                                  
                                             </div>
                                         </div>
@@ -1090,25 +1090,22 @@
 <!--THOUSAND SEPARATOR-->
 
 <script>
-    function formatNumber() {
-      // Get the input element and its value
-      var input = document.getElementById("numberInput"); // ID For Remarks
-      var value = input.value;
+    function formatNumber(input) {
+    // Remove existing separators and convert to number
+    let value = input.value.replace(/,/g, '');
+    let number = parseFloat(value);
+  
+    // Check if the value is valid
+    if (!isNaN(number)) {
+    // Format the number with separators
+    let formattedNumber = number.toLocaleString();
+    
+    // Update the input value with the formatted number
+    input.value = formattedNumber;
+  }
+}
 
-      // Remove any existing thousand separators
-      value = value.replace(/,/g, '');
-
-      // Remove any non-numeric characters
-      value = value.replace(/[^0-9]/g, '');
-
-      // Format the number with thousand separators
-      var formattedValue = Number(value).toLocaleString();
-
-      // Update the input value with the formatted number
-      input.value = formattedValue;
-    }
-  </script>
-
+</script>
 
 <!-- NO EDITING ABOVE THIS LINE. THOUSAND SEPARATOR -->
  
