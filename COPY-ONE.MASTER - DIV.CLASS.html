@@ -38,23 +38,9 @@
     <link rel="stylesheet" href="cursor.css">
     <link rel="stylesheet" href="assets/css/style.css">
 
-    
-
     <style>
-        .front{
-        display:none;
-        }  
-        #amountCash{
-            display:none;  
-        }
-        #amountCheque{
-            display:none;
-        }
-        #amountBank{
-            display:none;
-        }
-        #amountCard{
-            display:none;
+        .front {
+        display: none;
         }
     </style>
 
@@ -738,12 +724,12 @@
                                                     <i class="bi bi-cash-coin"></i>
                                                 </button>
                                                 
-                                                <select id="myselection" type="text" class="form-control" onchange="toggleContainers()">
-                                                    <option>Please Select An Option</option>
-                                                    <option value="Cash">Cash Option</option>
-                                                    <option value="Cheque">Cheque Option</option>
-                                                    <option value="Bank">Bank Transfer Option</option>
-                                                    <option value="Card">Card Option</option>
+                                                <select id="dropdown" type="text" class="form-control" onchange="toggleContainers()">
+                                                    <option value="container0">Please Select An Option</option>
+                                                    <option value="container1">Cash Option</option>
+                                                    <option value="container2">Cheque Option</option>
+                                                    <option value="container3">Bank Transfer Option</option>
+                                                    <option value="container4">Card Option</option>
                                                   </select>
 
                                             </div>
@@ -776,7 +762,7 @@
                             </div>
                             
                             <!--CASH DETAILS-->
-                            <div id="amountCash" class="front">
+                            <div id="container1" class="front">
                                 <div class="card box-shadow-1">
                                     <div class="card-header" >
                                         <h4 class="card-header-title color-o">
@@ -817,7 +803,7 @@
                                 </form>
 
                             <!--CHEQUE DETAILS-->
-                            <div id="amountCheque" class="front">
+                            <div id="container2" class="front">
                                 <div class="card box-shadow-1">
                                     <div class="card-header" >
                                         <h4 class="card-header-title color-o">
@@ -881,7 +867,7 @@
                                     </div>
                                 
                             <!--BANK TRANSFER DETAILS-->
-                            <div id="amountBank" class="front">
+                            <div id="container3" class="front">
                                 <div class="card box-shadow-1">
                                     <div class="card-header" >
                                         <h4 class="card-header-title color-o">
@@ -932,7 +918,7 @@
                                     </div>
                                 
                             <!-- CARD DETAILS -->
-                            <div id="amountCard" class="front">
+                            <div id="container4" class="front">
                             <div class="card box-shadow-1">
                                 <div class="card-header" >
                                     <h4 class="card-header-title color-o">
@@ -1180,17 +1166,29 @@
     }
   </script>-->
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-
   <script>
-      $(document).ready(function(){
-      $('#myselection').on('change', function(){
-      var demovalue = $(this).val(); 
-      $("div.front").hide();
-      $("#amount"+demovalue).show();
-  });
-});
-  </script>
+    function toggleContainers() {
+    // Get the selected option value
+    let selectedValue = document.getElementById("dropdown").value;
+
+    // Get all the container elements
+    let containers = document.getElementsByClassName("front");
+
+    // Hide all containers
+    for (let i = 0; i < containers.length; i++) {
+        containers[i].style.display = "none";
+    }
+
+    // Show the selected container
+    if (selectedValue) {
+        let selectedContainer = document.getElementById(selectedValue);
+        if (selectedContainer) {
+        selectedContainer.style.display = "block";
+        }
+    }
+    }
+
+</script>
 
 </body>
 </html>
